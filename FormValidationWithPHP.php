@@ -13,12 +13,12 @@
 	$gender = "";
 	$data = "";
 
-	if(isset($_GET['submit'])){
+	if(isset($_POST['submit'])){
 
-		$name = $_GET['name'];
-		$mail = $_GET['mail'];
-		$time = $_GET['time'];
-		$classes = $_GET['classes'];
+		$name = $_POST['name'];
+		$mail = $_POST['mail'];
+		$time = $_POST['time'];
+		$classes = $_POST['classes'];
 
 		if(empty($name)){
 			$error['name'] = true;
@@ -32,14 +32,14 @@
 		if(empty($classes)){
 			$error['classes'] = true;
 		}
-		if(!isset($_GET['agree'])){
+		if(!isset($_POST['agree'])){
 			$agree= true;
 		}
-		if(isset($_GET['gender']) && $_GET['gender']=="male"){
+		if(isset($_POST['gender']) && $_POST['gender']=="male"){
 			$isMale = "checked";
 			$gender = "male";
 		}
-		else if(isset($_GET['gender']) && $_GET['gender']=="female"){
+		else if(isset($_POST['gender']) && $_POST['gender']=="female"){
 			$isFemale = "checked";
 			$gender = "female";
 		}else{
@@ -78,7 +78,7 @@
 		
 	?>
 	
-	<form action="#" method="GET">
+	<form action="#" method="POST">
 		<table>
 			<tr> 
 				<td>Name </td>
